@@ -95,4 +95,44 @@ body{
     font-size: 17px;
     transition: 0.3s;
 }
+.nav-extention{
+    position: relative;
+    justify-content: space-between;
+    height: 375px;
+    background-color: rgb(235, 226, 226);
+    border-bottom: var(--main-color) 3px solid;
+    top: 40px;
+    display: none;
+}
+.nav-extention ul{
+    height: 90%;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding-top: 30px;
+    color: var(--main-color);
+}
+.nav-extention ul li{
+    padding: 10px 10px;
+    margin-left: 40px;
+    border-bottom: rgb(233, 226, 226) 1px solid;
+}
+.nav-extention ul li a{
+    color: var(--main-color);
+    margin-left: 15px;
+    font-weight: 700;
+    font-size: 18px;
+}
+.nav-extention ul li i{
+    font-size: 18px;
+}
+.nav-extention img.left{
+    padding-top: 40px;
+    width: 45%;
+    height: 90%;
+}
+.header .container .links li:last-child:hover div.nav-extention{
+    display: flex;
+}
 /* end header */

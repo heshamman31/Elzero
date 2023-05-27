@@ -12,9 +12,7 @@
     padding: 0;
     margin: 0;
 }
-a{
-    text-decoration: none;
-}
+
 ul{
     list-style: none;
 }
@@ -22,7 +20,9 @@ ul{
 html{
     scroll-behavior: smooth;
 }
-
+a{
+    text-decoration: none;
+}
 body{
     font-family: 'Cairo', sans-serif;
 }
@@ -51,5 +51,48 @@ body{
 /* end global rules */
 
 /* start header */
-
+.header{
+    box-shadow: rgba(0, 0, 0, 0.128) 0 0 10px 3px;
+}
+.header .container{
+    display: flex;
+    justify-content: space-between;
+}
+.header .container .logo h1{
+    font-size: 25px;
+    color: var(--main-color);
+    padding: 15px 0;
+}
+.header .container .links{
+    display: flex;
+}
+.header .container .links li{
+    padding: 20px 30px;
+    position: relative;
+}
+.header .container .links li::before{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    height: 4px;
+    width: 0px;
+    background-color: var(--main-color);
+    transition: 0.3s;
+}
+.header .container .links li:hover::before{
+    width: 100%;
+}
+.header .container .links li:hover a,
+.header .container .links li:hover{
+    color: var(--main-color);
+    cursor: pointer;
+    background-color: #f5f2f2;
+}
+.header .container .links li a{
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    transition: 0.3s;
+}
 /* end header */

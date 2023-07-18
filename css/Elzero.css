@@ -1057,8 +1057,16 @@ body {
     padding-top: var(--section-padding);
     padding-bottom: var(--section-padding);
     background-color: var(--section-color);
+    position: relative;
 }
-
+.services > img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    filter:  blur(10px);
+}
 .services .container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -1067,15 +1075,16 @@ body {
 
 .services .container .service-box {
     position: relative;
-    background-color: white;
+    background-color: transparent;
     box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
     transition: 0.3s;
+    backdrop-filter: blur(10px) hue-rotate(310deg);
+    border: 1px solid rgb(255 255 255 / 62%);
 }
 
 .services .container .service-box:hover {
     transform: translateY(-12px);
 }
-
 .services .container .service-box::before {
     content: "";
     position: absolute;
@@ -1096,7 +1105,8 @@ body {
     display: block;
     text-align: center;
     margin: 30px 0 12px 0;
-    color: #7777774b;
+    /* color: #7777774b; */
+    color: #000000;
 }
 
 .services .container .service-box h3 {
@@ -1140,14 +1150,224 @@ body {
 
 /* start our-skills */
 .our-skills{
-    
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
 }
-.our-skills .container{}
-.our-skills img{}
-.our-skills .skills{}
-.our-skills .skills .skill{}
-.our-skills .skills .skill h3{}
-.our-skills .skills .skill h3 span{}
-.our-skills .skills .skill .the-progress{}
-.our-skills .skills .skill .the-progress span{}
+.our-skills .container{
+    display: flex;
+}
+@media (max-width: 991px){
+    .our-skills img{
+        display: none;
+    }
+}
+.our-skills .skills{
+    flex: 1;
+}
+.our-skills .skills .skill{
+    margin-bottom: 15px;
+}
+.our-skills .skills .skill h3{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.our-skills .skills .skill h3 span{
+    display: flex;
+    align-items: center;
+    color: var(--main-color);
+    font-size: 12px;
+    border: #c0bfbf solid 1px;
+    padding: 3px 5px;
+    border-radius: 4px;
+    height: 25px;
+    text-align: center;
+}
+.our-skills .skills .skill .the-progress{
+    position: relative;
+    height: 30px;
+    background-color: #ebe6e6c5;
+}
+.our-skills .skills .skill .the-progress span{
+    position: absolute;
+    height: 100%;
+    background-color: var(--main-color);
+    left: 0;
+}
 /* end our-skills */
+
+/* start how-it-works */
+.how-it-works{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: var(--section-color);
+}
+.how-it-works .container{
+    display: flex;
+    justify-content: space-between;
+}
+.how-it-works .container >img{
+    margin-top: 90px;
+    width: 470px;
+    height: 450px;
+}
+@media (max-width: 991px){
+    .how-it-works .container >img{
+        display: none;
+    }
+    .how-it-works .container{
+        justify-content: center;
+    }
+}
+.how-it-works .work-steps{
+    width: 570px;
+}
+@media (max-width: 1200px){
+    .how-it-works .container >img{
+        width: 400px;
+        height: 380px;
+    }
+    .how-it-works .work-steps{
+        width: 500px;
+    }
+}
+.how-it-works .work-step{
+    position: relative;
+    background-color: white;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+.how-it-works .work-step::before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 0;
+    width: 0;
+    transform: translateX(-50%) translateY(-50%);
+    transition: 0.3s;
+    background-color: #dddddda2;
+    z-index: -1;
+}
+.how-it-works .work-step:hover::before{
+    width: 100%;
+    height: 100%;
+}
+.how-it-works .work-step img{
+    width: 65px;
+    height: 65px;
+}
+.how-it-works .work-step .info{
+    margin-left: 30px;
+}
+.how-it-works .work-step .info h3 {
+    font-size: 22px;
+}
+.how-it-works .work-step .info p{
+    font-size: 18px;
+    color: #777;
+}
+@media (max-width: 991px){
+    .how-it-works .work-step{
+        display: block;
+        text-align: center;
+    }
+    .how-it-works .work-step .info{
+        margin: 0 ;
+    }
+}
+/* end how-it-works */
+/* start events */
+.events{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.events .container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.events .container >img{
+    max-width: 450px;
+}
+.events .info{
+    flex: 1;
+    text-align: center;
+    margin-top: 60px;
+}
+.events .info .time{
+    display: flex;
+    justify-content: center;
+}
+.events .info .time .box{
+    margin-right: 10px;
+}
+.events .info .time .box:hover .num ,
+.events .info .time .box:hover p{
+    border-color: var(--main-color);
+}
+.events .info .time .box .num{
+    padding: 15px 0px;
+    border: 1px solid #dfd9d9;
+    border-bottom: none;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--main-color);
+    width: 80px;
+    transition: 0.3s;
+    border-radius: 10px 10px 0 0;
+}
+.events .info .time .box p{
+    padding: 10px 15px;
+    border: 1px solid #dfd9d9;
+    width: 80px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.events .info > h3{
+    font-size: 30px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+.events .info > p {
+    color: #777;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 1.7;
+}
+.events form {
+    display: flex;
+    width: 600px;
+    justify-content: center;
+    margin: 100px auto 0;
+    gap: 20px;
+    padding: 20px 30px;
+    background-image: linear-gradient(to left , rgba(185, 185, 185, 0.678), var(--main-color));
+    border-radius: 50px;
+    box-shadow: inset -1px 17px 20px 0px rgb(255 255 255 / 45%);
+}
+.events form input[type="email"]{
+    flex: 1;
+    padding: 15px;
+    border: none;
+    outline: none;
+    caret-color: var(--main-color);
+    font-size: 16px;
+}
+.events form input[type="submit"]{
+    padding: 20px;
+    border-radius: 50px;
+    background-color: var(--main-color);
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+}
+.events form input[type="submit"]:hover{
+    cursor: pointer;
+    background-color: var(--secondary-color);
+}
+/* end events */

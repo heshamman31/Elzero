@@ -135,9 +135,9 @@ body {
     }
 
     100% {
-        left: 100%;
+        left: 101%;
         border-radius: 0;
-        width: 51%;
+        width: 52%;
         height: 101%;
     }
 }
